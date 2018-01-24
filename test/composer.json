@@ -7,5 +7,7 @@
             "url": "https://github.com/christophermh44/rtds"
         }
     ],
-    "require": {}
+    "require": {
+        "rtds/php": "master"
+    }
 }
