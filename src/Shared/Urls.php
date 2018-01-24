@@ -5,17 +5,17 @@ use Rtds\JsonHandler;
 use Rtds\Util\RichUrl;
 
 class Urls extends JsonHandler {
-    private $self;
-    private $web;
-    private $parent;
-    private $player;
-    private $listen;
-    private $legal_notice;
-    private $contact;
-    private $social;
-    private $buy;
-    private $stream;
-    private $extra;
+    protected $self;
+    protected $web;
+    protected $parent;
+    protected $player;
+    protected $listen;
+    protected $legal_notice;
+    protected $contact;
+    protected $social;
+    protected $buy;
+    protected $stream;
+    protected $extra;
 
     public function getSelf(): String {
         return $this->self;
@@ -150,5 +150,6 @@ class Urls extends JsonHandler {
                 $this->{$key} = $value;
             }
         }
+        return $this;
     }
 }

@@ -4,10 +4,10 @@ use Rtds\Exception;
 use Rtds\JsonHandler;
 
 class Contributor extends JsonHandler {
-    private $name;
-    private $roles;
-    private $images;
-    private $urls;
+    protected $name;
+    protected $roles;
+    protected $images;
+    protected $urls;
 
     public function getName(): String {
         return $this->name;

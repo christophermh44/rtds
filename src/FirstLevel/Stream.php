@@ -3,11 +3,11 @@
 use Rtds\JsonHandler;
 
 class Stream extends JsonHandler {
-    private $type;
-    private $format;
-    private $quality;
-    private $channels;
-    private $url;
+    protected $type;
+    protected $format;
+    protected $quality;
+    protected $channels;
+    protected $url;
 
     public function getType(): String {
         return $this->type;

@@ -7,14 +7,14 @@ use Rtds\Shared\Image;
 use Rtds\Shared\Urls;
 
 class Radio extends JsonHandler {
-    private $name;
-    private $slogan;
-    private $description;
-    private $images;
-    private $coordinates;
-    private $genres;
-    private $urls;
-    private $extra;
+    protected $name;
+    protected $slogan;
+    protected $description;
+    protected $images;
+    protected $coordinates;
+    protected $genres;
+    protected $urls;
+    protected $extra;
 
     public function getName(): String {
         return $this->name;

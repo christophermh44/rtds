@@ -14,5 +14,6 @@ $json = <<<EOT
 }
 EOT;
 $rtds->fromJson($json);
+$json = $rtds->send(200, 'Success.');
 
-var_dump($rtds);
+echo $json;

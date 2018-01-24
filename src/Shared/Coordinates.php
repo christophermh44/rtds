@@ -4,13 +4,13 @@ use Rtds\Exception;
 use Rtds\JsonHandler;
 
 class Coordinates extends JsonHandler {
-    private $type;
-    private $organisation;
-    private $address;
-    private $zip;
-    private $city;
-    private $country;
-    private $phones;
+    protected $type;
+    protected $organisation;
+    protected $address;
+    protected $zip;
+    protected $city;
+    protected $country;
+    protected $phones;
 
     public function getType(): String {
         return $this->type;

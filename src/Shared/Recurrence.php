@@ -5,9 +5,9 @@ use Rtds\JsonHandler;
 use Rtds\Util\StartEnd;
 
 class Recurrence extends JsonHandler {
-    private $days;
-    private $dates;
-    private $hours;
+    protected $days;
+    protected $dates;
+    protected $hours;
 
     public function getDays(): array { // String[]
         return $this->days;

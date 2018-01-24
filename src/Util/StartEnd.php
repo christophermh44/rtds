@@ -1,8 +1,8 @@
 <?php namespace Rtds\Util;
 
 class StartEnd extends RtdsObject {
-    private $start;
-    private $end;
+    protected $start;
+    protected $end;
 
     public function getStart(): String {
         return $this->start;

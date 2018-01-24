@@ -3,7 +3,7 @@
 use Rtds\FirstLevel\Status;
 
 class RtdsObject extends JsonHandler {
-    private $structure = [];
+    protected $structure = [];
 
     public function __construct() {}
 
@@ -31,25 +31,37 @@ class RtdsObject extends JsonHandler {
         return $this->bind($array);
     }
 
-    public function toJson($status, $message) {
-        $object = $this->structure;
+    public function send($code, $message) {
         $status = new Status();
-        $status->setStatus($status);
+        $status->setStatus($code);
         $status->setMessage($message);
         $status->setAvailableData(array_keys($this->structure));
-        $object->status = $status;
-        return json_encode($object);
+        $this->status = $status;
+	return $this->toJson();
+    }
+
+    public function toJson() {
+        return json_encode($this);
     }
 
     public function bind(array $array): JsonHandler { // RtdsObject
+        $classes = [
+            'status' => '\\Rtds\\FirstLevel\\Status',
+            'radio' => '\\Rtds\\FirstLevel\\Radio',
+            'show' => '\\Rtds\\FirstLevel\\Show',
+            'stream' => '\\Rtds\\FirstLevel\\Stream',
+            'tags' => '\\Rtds\\FirstLevel\\Tags'
+        ];
         foreach ($array as $key => $value) {
-            $this->{$key} = (new (([
-                'status' => '\\Rtds\\FirstLevel\\Status',
-                'radio' => '\\Rtds\\FirstLevel\\Radio',
-                'show' => '\\Rtds\\FirstLevel\\Show',
-                'stream' => '\\Rtds\\FirstLevel\\Stream',
-                'tags' => '\\Rtds\\FirstLevel\\Tags'
-            ])($value)))->bind($value);
+            $class = $classes[$key];
+	    $object = (new $class);
+	    $object->bind($value);
+            $this->{$key} = $object;
         }
+        return $this;
+    }
+
+    public function jsonSerialize() {
+        return $this->structure;
     }
 }

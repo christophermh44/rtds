@@ -9,14 +9,14 @@ use Rtds\Shared\Recurrence;
 use Rtds\Shared\Urls;
 
 class Show extends JsonHandler {
-    private $name;
-    private $description;
-    private $recurrences;
-    private $contributors;
-    private $images;
-    private $urls;
-    private $phones;
-    private $extra;
+    protected $name;
+    protected $description;
+    protected $recurrences;
+    protected $contributors;
+    protected $images;
+    protected $urls;
+    protected $phones;
+    protected $extra;
 
     public function getName(): String {
         return $this->name;

@@ -6,19 +6,19 @@ use Rtds\Shared\Urls;
 use Rtds\Util\Cover;
 
 class Tags extends JsonHandler {
-    private $artists;
-    private $title;
-    private $album;
-    private $year;
-    private $cover;
-    private $genres;
-    private $categories;
-    private $length;
-    private $remaining;
-    private $urls;
-    private $extra;
-    private $previous;
-    private $next;
+    protected $artists;
+    protected $title;
+    protected $album;
+    protected $year;
+    protected $cover;
+    protected $genres;
+    protected $categories;
+    protected $length;
+    protected $remaining;
+    protected $urls;
+    protected $extra;
+    protected $previous;
+    protected $next;
 
     public function getArtists(): array { // String[]
         return $this->artists;

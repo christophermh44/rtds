@@ -3,9 +3,9 @@
 use Rtds\RtdsObject;
 
 class Cover extends RtdsObject {
-    private $url;
-    private $width;
-    private $height;
+    protected $url;
+    protected $width;
+    protected $height;
 
     public function getUrl(): String {
         return $this->url;

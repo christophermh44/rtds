@@ -3,8 +3,8 @@
 use Rtds\JsonHandler;
 
 class Phone extends JsonHandler {
-    private $type;
-    private $number;
+    protected $type;
+    protected $number;
 
     public function getType(): String {
         return $this->type;

@@ -1,9 +1,9 @@
 <?php namespace Rtds\Util;
 
 class RichUrl extends RtdsObject {
-    private $type;
-    private $description;
-    private $url;
+    protected $type;
+    protected $description;
+    protected $url;
 
     public function getType(): String {
         return $this->type;

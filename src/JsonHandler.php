@@ -1,13 +1,4 @@
-<?php
-/**
- * Created by IntelliJ IDEA.
- * User: christopher.machicoane-hurtaud
- * Date: 24/01/18
- * Time: 15:10
- */
-
-namespace Rtds;
-
+<?php namespace Rtds;
 
 use Rtds\Shared\Contributor;
 use Rtds\Shared\Coordinates;
@@ -15,7 +6,11 @@ use Rtds\Shared\Image;
 use Rtds\Shared\Phone;
 use Rtds\Shared\Recurrence;
 
-abstract class JsonHandler {
+abstract class JsonHandler implements \JsonSerializable {
+    public function jsonSerialize() {
+        return get_object_vars($this);
+    }
+
     public function bind(array $array): JsonHandler {
         foreach ($array as $key => $value) {
             if ($key === 'recurrences') {
@@ -58,5 +53,6 @@ abstract class JsonHandler {
                 $this->{$key} = $value;
             }
         }
+        return $this;
     }
 }

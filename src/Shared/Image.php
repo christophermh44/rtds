@@ -3,12 +3,12 @@
 use Rtds\JsonHandler;
 
 class Image extends JsonHandler {
-    private $type;
-    private $format;
-    private $transparency;
-    private $url;
-    private $width;
-    private $height;
+    protected $type;
+    protected $format;
+    protected $transparency;
+    protected $url;
+    protected $width;
+    protected $height;
 
     public function getType(): String {
         return $this->type;

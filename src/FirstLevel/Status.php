@@ -4,9 +4,9 @@ use Rtds\Exception;
 use Rtds\JsonHandler;
 
 class Status extends JsonHandler {
-    private $status;
-    private $message;
-    private $available_data;
+    protected $status;
+    protected $message;
+    protected $available_data;
 
     public function getStatus(): String {
         return $this->status;
