@@ -1,4 +1,4 @@
-title: Documentation — RTDS - Radio Tagging Data Schema
+title: Documentation — RTDS - Radio Tagging Data Schema (beta)
 template: index
 expanded_header: false
 ===

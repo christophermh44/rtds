@@ -1,4 +1,4 @@
-title: RTDS - Radio Tagging Data Schema
+title: RTDS - Radio Tagging Data Schema (beta)
 template: index
 expanded_header: true
 ===
