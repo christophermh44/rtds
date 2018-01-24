@@ -10,12 +10,6 @@
             "email": "christophermh44@gmail.com"
         }
     ],
-    "repositories": [
-        {
-	    "type": "vcs",
-	    "url": "https://github.com/christophermh44/rtds"
-	}
-    ],
     "autoload": {
         "psr-4": {"Rtds\\": "src/"}
     },
