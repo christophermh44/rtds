@@ -14,7 +14,12 @@ RTDS is new. You want to display your service here? [Send me a tweet](https://tw
 
 ### Roadmap
 
-* propose REST service to query more data like:
+* implementations:
+	* PHP (done)
+	* NodeJS
+	* Java
+	* Other langages if pull requests are submitted…
+* more data like:
 	* history of streamed music
 	* list of shows incoming 
 	* neighbour streams, 
