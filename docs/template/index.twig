@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ meta.title }}</title>
+	<link rel="stylesheet" href="css/spectre.css">
+	<link rel="stylesheet" href="css/tocbot.css">
+	<link rel="stylesheet" href="css/highlight.css">
+	<style>
+		header {
+			margin-bottom: 1rem;
+		}
+
+		header h1 {
+			margin: 0;
+		}
+
+		header h1 img {
+			height: 3.2rem;
+			position: relative;
+			top: -0.2rem;
+			vertical-align: middle;
+		}
+
+		header h1 a:focus,
+		header h1 a:hover {
+			background-color: rgba(255, 255, 255, 0.1);
+			border-bottom: 0;
+			text-decoration: none;
+		}
+
+		header nav ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		header nav ul li {
+			display: inline-block;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.hero {
+			display: block;
+			font-size: 1.2rem;
+			margin: 6rem auto;
+			max-width: 48rem;
+			text-align: center;
+		}
+
+		.hljs {
+			border-left: 3rem solid #23241f;
+			border-right: 3rem solid #23241f;
+			left: -3rem;
+			position: relative;
+			width: calc(100% + 6rem);
+		}
+
+		.overflow {
+			border: 1px solid #eeeeee;
+			height: 400px;
+			margin-bottom: 1rem;
+			max-height: 80vh;
+			overflow-y: auto;
+		}
+
+		.overflow dl {
+			position: relative;
+		}
+
+		.overflow dt {
+			background-color: #fff;
+			border-bottom: 1px solid #ccc;
+			left: 0;
+			padding: 0.5rem;
+			position: sticky;
+			right: 0;
+			top: 0;
+		}
+
+		.overflow dd {
+			padding: 0 0.5rem;
+		}
+
+		.p-sticky {
+			position: sticky;
+		}
+
+		.toc-wrapper {
+			top: 1rem;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin-top: 2.4rem;
+		}
+	</style>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+	<header class="container py-2 bg-primary text-light">
+		<div class="container grid-xl">
+			<div class="navbar">
+				<section class="navbar-section">
+					<div class="navbar-brand">
+						<h1>
+							<a href="/" class="text-light p-2">
+								<img src="icon.svg" alt="Logo RTDS">
+								RTDS
+								<small class="text-small">Radio Tagging Data Schema</small>
+							</a>
+						</h1>
+					</div>
+				</section>
+				<section class="navbar-section">
+					<nav>
+						<ul>
+							<li>
+								<a href="/docs" class="text-light p-2">Docs</a>
+							</li>
+							<li>
+								<a href="https://github.com/christophermh44/rtds" class="text-light p-2">Github</a>
+							</li>
+						</ul>
+					</nav>
+				</section>
+			</div>
+			{% if meta.expanded_header %}
+				<section id="hero" class="hero">
+					<p>
+						RTDS or "Radio Tagging Data Schema" is a standard JSON object used by radios to transmit music tags and extra data about the radio, the show streamed, and some more.
+					</p>
+				</section>
+			{% endif %}
+		</div>
+	</header>
+	<main class="container grid-xl">
+		{% if not meta.expanded_header %}
+			<div class="columns">
+				<div class="column col-md-12 col-8">
+					<div class="js-toc-content">
+						{{ body|raw }}
+					</div>
+				</div>
+				<div class="column hide-md col-3 col-ml-auto">
+					<div class="p-sticky toc-wrapper">
+						<div class="js-toc"></div>
+					</div>
+				</div>
+			</div>
+		{% else %}
+			{{ body|raw }}
+		{% endif %}
+	</main>
+	<footer>
+		
+	</footer>
+	<script src="js/tocbot.js"></script>
+	<script>tocbot.init({tocSelector: '.js-toc', contentSelector: '.js-toc-content', headingSelector: 'h2, h3, h4, h5', collapseDepth: 4});</script>
+	<script src="js/highlight.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>Array.from(document.querySelectorAll('table')).forEach(table => table.classList.add('table', 'table-striped', 'table-hover', 'mb-2'));</script>
+</body>
+</html>

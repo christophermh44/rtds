@@ -1,0 +1,16 @@
+{
+    "name": "kris/rtds.c-mh.fr",
+    "require": {
+        "twig/twig": "^2.4",
+        "daylerees/kurenai": "^2.0",
+        "symfony/yaml": "^3.3",
+        "michelf/php-markdown": "^1.7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christopher Machicoane-Hurtaud",
+            "email": "contact@c-mh.fr"
+        }
+    ]
+}
