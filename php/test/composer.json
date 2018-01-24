@@ -1,0 +1,11 @@
+{
+    "name": "rtds/test",
+    "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/christophermh44/rtds"
+        }
+    ],
+    "require": {}
+}
