@@ -1,6 +1,8 @@
 <?php namespace Rtds\FirstLevel;
 
-class Stream {
+use Rtds\JsonHandler;
+
+class Stream extends JsonHandler {
     private $type;
     private $format;
     private $quality;

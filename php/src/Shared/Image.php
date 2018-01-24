@@ -1,6 +1,8 @@
 <?php namespace Rtds\Shared;
 
-class Image {
+use Rtds\JsonHandler;
+
+class Image extends JsonHandler {
     private $type;
     private $format;
     private $transparency;

@@ -1,6 +1,6 @@
 <?php namespace Rtds\Util;
 
-class RichUrl {
+class RichUrl extends RtdsObject {
     private $type;
     private $description;
     private $url;

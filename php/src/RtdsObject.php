@@ -1,6 +1,8 @@
 <?php namespace Rtds;
 
-class RtdsObject {
+use Rtds\FirstLevel\Status;
+
+class RtdsObject extends JsonHandler {
     private $structure = [];
 
     public function __construct() {}
@@ -24,13 +26,30 @@ class RtdsObject {
         unset($this->structure[$name]);
     }
 
-    public function toJsonObject($status, $message) {
+    public function fromJson($serial) {
+        $array = json_decode($serial, true);
+        return $this->bind($array);
+    }
+
+    public function toJson($status, $message) {
         $object = $this->structure;
-        $object['status'] = [
-            'status' => $status,
-            'message' => $message,
-            'available_data' => array_keys($this->structure)
-        ];
+        $status = new Status();
+        $status->setStatus($status);
+        $status->setMessage($message);
+        $status->setAvailableData(array_keys($this->structure));
+        $object->status = $status;
         return json_encode($object);
+    }
+
+    public function bind(array $array): JsonHandler { // RtdsObject
+        foreach ($array as $key => $value) {
+            $this->{$key} = (new (([
+                'status' => '\\Rtds\\FirstLevel\\Status',
+                'radio' => '\\Rtds\\FirstLevel\\Radio',
+                'show' => '\\Rtds\\FirstLevel\\Show',
+                'stream' => '\\Rtds\\FirstLevel\\Stream',
+                'tags' => '\\Rtds\\FirstLevel\\Tags'
+            ])($value)))->bind($value);
+        }
     }
 }

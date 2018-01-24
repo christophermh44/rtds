@@ -1,11 +1,12 @@
 <?php namespace Rtds\FirstLevel;
 
 use Rtds\Exception;
+use Rtds\JsonHandler;
 use Rtds\Shared\Coordinates;
 use Rtds\Shared\Image;
 use Rtds\Shared\Urls;
 
-class Radio {
+class Radio extends JsonHandler {
     private $name;
     private $slogan;
     private $description;

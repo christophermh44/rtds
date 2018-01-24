@@ -1,6 +1,8 @@
 <?php namespace Rtds\Shared;
 
-class Phone {
+use Rtds\JsonHandler;
+
+class Phone extends JsonHandler {
     private $type;
     private $number;
 

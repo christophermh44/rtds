@@ -1,6 +1,6 @@
 <?php namespace Rtds\Util;
 
-class StartEnd {
+class StartEnd extends RtdsObject {
     private $start;
     private $end;
 

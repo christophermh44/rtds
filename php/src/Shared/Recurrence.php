@@ -1,9 +1,10 @@
 <?php namespace Rtds\Shared;
 
 use Rtds\Exception;
+use Rtds\JsonHandler;
 use Rtds\Util\StartEnd;
 
-class Recurrence {
+class Recurrence extends JsonHandler {
     private $days;
     private $dates;
     private $hours;

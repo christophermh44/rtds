@@ -1,8 +1,9 @@
 <?php namespace Rtds\Shared;
 
 use Rtds\Exception;
+use Rtds\JsonHandler;
 
-class Contributor {
+class Contributor extends JsonHandler {
     private $name;
     private $roles;
     private $images;

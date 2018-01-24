@@ -1,10 +1,11 @@
 <?php namespace Rtds\FirstLevel;
 
 use Rtds\Exception;
+use Rtds\JsonHandler;
 use Rtds\Shared\Urls;
 use Rtds\Util\Cover;
 
-class Tags {
+class Tags extends JsonHandler {
     private $artists;
     private $title;
     private $album;

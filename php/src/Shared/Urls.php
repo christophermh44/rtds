@@ -1,9 +1,10 @@
 <?php namespace Rtds\Shared;
 
 use Rtds\Exception;
+use Rtds\JsonHandler;
 use Rtds\Util\RichUrl;
 
-class Urls {
+class Urls extends JsonHandler {
     private $self;
     private $web;
     private $parent;
@@ -117,5 +118,37 @@ class Urls {
 
     public function setExtra(array $extra) {
         $this->extra = $extra;
+    }
+
+    public function bind(array $array): JsonHandler {
+        foreach ($array as $key => $value) {
+            if ($key === 'social') {
+                $urls = [];
+                foreach ($value as $v) {
+                    $url = new RichUrl();
+                    $url->bind($v);
+                    $urls[] = $url;
+                }
+                $this->setSocial($urls);
+            } else if ($key === 'buy') {
+                $urls = [];
+                foreach ($value as $v) {
+                    $url = new RichUrl();
+                    $url->bind($v);
+                    $urls[] = $url;
+                }
+                $this->setBuy($urls);
+            } else if ($key === 'stream') {
+                $urls = [];
+                foreach ($value as $v) {
+                    $url = new RichUrl();
+                    $url->bind($v);
+                    $urls[] = $url;
+                }
+                $this->setStream($urls);
+            } else {
+                $this->{$key} = $value;
+            }
+        }
     }
 }

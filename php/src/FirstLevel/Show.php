@@ -1,13 +1,14 @@
 <?php namespace Rtds\FirstLevel;
 
 use Rtds\Exception;
+use Rtds\JsonHandler;
 use Rtds\Shared\Contributor;
 use Rtds\Shared\Image;
 use Rtds\Shared\Phone;
 use Rtds\Shared\Recurrence;
 use Rtds\Shared\Urls;
 
-class Show {
+class Show extends JsonHandler {
     private $name;
     private $description;
     private $recurrences;

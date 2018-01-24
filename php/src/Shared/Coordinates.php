@@ -1,8 +1,9 @@
 <?php namespace Rtds\Shared;
 
 use Rtds\Exception;
+use Rtds\JsonHandler;
 
-class Coordinates {
+class Coordinates extends JsonHandler {
     private $type;
     private $organisation;
     private $address;
