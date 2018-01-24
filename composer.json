@@ -1,6 +1,7 @@
 {
     "name": "rtds/php",
     "description": "PHP classes for RTDS Object",
+    "homepage": "https://github.com/christophermh44/rtds",
     "version": "0.0.1",
     "type": "library",
     "license": "MIT",
@@ -13,5 +14,7 @@
     "autoload": {
         "psr-4": {"Rtds\\": "src/"}
     },
-    "require": {}
+    "require": {
+        "php": "^7.0"
+    }
 }
