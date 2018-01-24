@@ -2143,7 +2143,7 @@ A recurrence object describes a time slot.
 | dates | object | Describe the start date and the end date. End date is not required. If you do not provide an end date, it will implicitly be means that the end date is the same as the start date. The format of a date is yyyy/mm/dd |
 | hours | object | Describe the start hour and the end hour. The format of an hour is hh:mm. You can also set an empty string for both start and end, thus it means that the recurrence last all day. |
 
-#### contributor {#object-contributor}
+#### Contributor {#object-contributor}
 
 A contributor object describes people like a show presenter, a producer, etc.
 
@@ -2434,3 +2434,7 @@ A contributor object describes people like a show presenter, a producer, etc.
 	}
 }
 ~~~~
+
+## PHP Implementation
+
+While this part is being written, take a look to the [test folder](https://github.com/christophermh44/rtds/tree/master/test) where you will find some examples easy to understand.
