@@ -1,15 +1,121 @@
-<?php namespace \Rtds\Shared;
+<?php namespace Rtds\Shared;
+
+use Rtds\Exception;
+use Rtds\Util\RichUrl;
 
 class Urls {
-	public \String $self;
-	public \String $web;
-	public \String $parent;
-	public \String $player;
-	public \String $listen;
-	public \String $legal_notice;
-	public \String $contact;
-	public \Array $social;
-	public \Array $buy;
-	public \Array $stream;
-	public \Array $extra;
+    private $self;
+    private $web;
+    private $parent;
+    private $player;
+    private $listen;
+    private $legal_notice;
+    private $contact;
+    private $social;
+    private $buy;
+    private $stream;
+    private $extra;
+
+    public function getSelf(): String {
+        return $this->self;
+    }
+
+    public function setSelf(String $self) {
+        $this->self = $self;
+    }
+
+    public function getWeb(): String {
+        return $this->web;
+    }
+
+    public function setWeb(String $web) {
+        $this->web = $web;
+    }
+
+    public function getParent(): String {
+        return $this->parent;
+    }
+
+    public function setParent(String $parent) {
+        $this->parent = $parent;
+    }
+
+    public function getPlayer(): String {
+        return $this->player;
+    }
+
+    public function setPlayer(String $player) {
+        $this->player = $player;
+    }
+
+    public function getListen(): String {
+        return $this->listen;
+    }
+
+    public function setListen(String $listen) {
+        $this->listen = $listen;
+    }
+
+    public function getLegalNotice(): String {
+        return $this->legal_notice;
+    }
+
+    public function setLegalNotice(String $legal_notice) {
+        $this->legal_notice = $legal_notice;
+    }
+
+    public function getContact(): String {
+        return $this->contact;
+    }
+
+    public function setContact(String $contact) {
+        $this->contact = $contact;
+    }
+
+    public function getSocial(): array { // RichUrl[]
+        return $this->social;
+    }
+
+    public function setSocial(array $social) { // RichUrl[]
+        foreach ($social as $url) {
+            if (!($url instanceof RichUrl)) {
+                throw new Exception('Error while adding social in Urls object.');
+            }
+        }
+        $this->social = $social;
+    }
+
+    public function getBuy(): array { // RichUrl[]
+        return $this->buy;
+    }
+
+    public function setBuy(array $buy) { // RichUrl[]
+        foreach ($buy as $url) {
+            if (!($url instanceof RichUrl)) {
+                throw new Exception('Error while adding buy in Urls object.');
+            }
+        }
+        $this->buy = $buy;
+    }
+
+    public function getStream(): array { // RichUrl[]
+        return $this->stream;
+    }
+
+    public function setStream(array $stream) { // RichUrl[]
+        foreach ($stream as $url) {
+            if (!($url instanceof RichUrl)) {
+                throw new Exception('Error while adding stream in Urls object.');
+            }
+        }
+        $this->stream = $stream;
+    }
+
+    public function getExtra(): array {
+        return $this->extra;
+    }
+
+    public function setExtra(array $extra) {
+        $this->extra = $extra;
+    }
 }
